@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
+
+body {
+    background-image: url('wom1.png');
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+    color: #ffffff;
+    text-align: right;
+}
+
+.container {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 100vh;
+    padding-right: 20px;
+}
+
+.heading {
+    max-width: 600px;
+    padding: 60px;
+    text-align: right;
+}
+
+h1 {
+    font-size: 36px;
+    font-weight: 500;
+    margin-bottom: 50px;
+}
+
+h1 span {
+    font-weight: 700;
+}
+
+p {
+    font-size: 18px;
+    margin-top: 40px;
+    line-height: 1.8;
+}
+
+.signin-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    margin-top: 50px;
+}
+
+.signin-text {
+    color: #DDB7DE;
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 10px;
+    margin-right: 20px;
+}
+
+.google-btn {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 14px 24px;
+    background-color: #ffffff;
+    color: #000000;
+    font-size: 18px;
+    font-weight: 500;
+    border-radius: 5px;
+    text-decoration: none;
+    width: 240px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    margin-left: auto;
+}
+
+.google-btn img {
+    width: 24px;
+    height: 24px;
+    margin-right: 12px;
+}
+
+@media (max-width: 768px) {
+    .container {
+        justify-content: center;
+        text-align: center;
+        padding: 20px;
+    }
+
+    .heading {
+        max-width: 90%;
+        padding: 30px;
+        text-align: center;
+    }
+
+    h1 {
+        font-size: 28px;
+        margin-bottom: 30px;
+    }
+
+    p {
+        font-size: 16px;
+        margin-top: 20px;
+        line-height: 1.6;
+    }
+
+    .signin-container {
+        align-items: center;
+    }
+
+    .signin-text {
+        margin-right: 0;
+        text-align: center;
+    }
+
+    .google-btn {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 24px;
+    }
+
+    p {
+        font-size: 14px;
+    }
+
+    .google-btn {
+        font-size: 16px;
+        padding: 12px 20px;
+    }
+
+    .google-btn img {
+        width: 20px;
+        height: 20px;
+    }
+}
