@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Repository Analysis</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="anwl.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="repo-info">
+            <div class="repo-header">
+                <span class="repo-path"> <img src="branch.png" alt="branch">xyzusername > repo-name</span>
+                <span class="repo-status">Public</span>
+            </div>
+            <p class="repo-desc">Repository description would appear here</p>
+            <div class="repo-stats">
+                <span> <img src="star.png" alt="star"> 250 stars</span>
+                <span><img src="fork.png" alt="fork"> 87 forks</span>
+                <span><img src="watchers.png" alt="watcher"> 94 watchers</span>
+            </div>
+        </div>
+
+        <div class="tabs">
+            <button class="tab active">Overview</button>
+            <button class="tab">Files</button>
+        </div>
+
+        <div class="analysis-content">
+            <div class="analysis-section">
+                <h2>Similarity Analysis</h2>
+                <div class="score-container">
+                    <div class="score-item">
+                        <label>Similarity Score</label>
+                        <br>
+                        <div class="prog-bar">
+                            <div class="prog" style="width: 74.91%"></div>
+                        </div>
+                        <span class="score">74.91%</span>
+                    </div>
+                    <div class="score-item">
+                        <label>Originality Score</label>
+                        <br>
+                        <div class="prog-bar">
+                            <div class="prog" style="width: 56.81%"></div>
+                        </div>
+                        <span class="score">56.81%</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="summary-section">
+                <h2>Analysis Summary</h2>
+                <div class="summary-grid">
+                    <div class="summary-item">
+                        <label>Total files analysed:</label>
+                        <span>15</span>
+                    </div>
+                    <div class="summary-item">
+                        <label>High similarity files:</label>
+                        <span>0</span>
+                    </div>
+                    <div class="summary-item">
+                        <label>Medium similarity files:</label>
+                        <span>8</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
