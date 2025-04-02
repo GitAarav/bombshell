@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Sign-In</title>
+    <script src="https://www.gstatic.com/firebasejs/9.21.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.21.0/firebase-auth.js"></script>
+</head>
+<body>
+    <button id="signin">Sign In with Google</button>
+
+    <script type="module">
+        // Import Firebase modules
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.21.0/firebase-app.js";
+        import { getAuth, signInWithPopup, GoogleAuthProvider } from "https://www.gstatic.com/firebasejs/9.21.0/firebase-auth.js";
+
+        // Firebase configuration (replace with your values)
+        const firebaseConfig = {
+  apiKey: "AIzaSyDCHKrNsAl_kUgLnaZ7Qr3eQa3WqaEjLpc",
+  authDomain: "aaravproj.firebaseapp.com",
+  projectId: "aaravproj",
+  storageBucket: "aaravproj.firebasestorage.app",
+  messagingSenderId: "511863220781",
+  appId: "1:511863220781:web:18c95d34ad02a7bd0f66a4"
+};
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
+
+        // Google Sign-In logic
+        document.getElementById("signin").addEventListener("click", async () => {
+            const provider = new GoogleAuthProvider();
+            try {
+                const result = await signInWithPopup(auth, provider);
+                const user = result.user;
+
+                // Get Firebase ID token
+                const token = await user.getIdToken();
+
+                console.log("User ID Token:", token);
+
+                // Send token to backend for verification
+                const response = await fetch("http://localhost:5000/api/user-profile", {
+                    method: "GET",
+                    headers: { Authorization: `Bearer ${token}` },
+                });
+
+                if (response.ok) {
+                    const data = await response.json();
+                    alert(`Hello ${data.email}, your unique ID is ${data.userId}`);
+                } else {
+                    alert("Failed to access protected route.");
+                }
+            } catch (error) {
+                console.error(error);
+                alert("Sign-In failed");
+            }
+        });
+    </script>
+</body>
+</html>
